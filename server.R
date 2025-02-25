@@ -133,7 +133,7 @@ server <- function(input, output, session) {
       DF[, c("name", "theme", "weight", "policy", "feature")],
       readOnly = TRUE,
       colHeaders = c(
-        purrr::map_chr(c("data", "theme", "weight", "policy_bezos_per"), get_translation),
+        purrr::map_chr(c("data", "theme", "weight", "policy"), get_translation),
         "feature"
       )
     ) |> 

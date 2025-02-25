@@ -26,8 +26,8 @@ prot_lst <- list(
 names(prot_lst) <- c(
     get_translation("nolock_txt"),
     get_translation("prot_txt_bezos"),
-    get_translation("restlock_txt_per_bezos"),
-    get_translation("prot_rest_txt_per_bezos")
+    get_translation("restlock_txt_bezos"),
+    get_translation("prot_rest_txt_bezos")
   )
 
 # Create a list for area calculation and assign a name based on the current language

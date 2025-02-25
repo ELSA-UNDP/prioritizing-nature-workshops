@@ -8,11 +8,11 @@ terra::terraOptions(tempdir = here::here(""), steps = 4, todisk = TRUE)
 
 terra::tmpFiles(remove = TRUE) # Clean existing temp layers
 
-iso3 <- "PER" # not used - local testing only
-country <- "Peru"
+iso3 <- "ECU" # not used - local testing only
+country <- "Ecuador"
 language <- "es" # not used - local testing only
 input_spreadsheet <- "prioritizing-nature-database-master.xlsx"
-sheetname <- "PER_data_stack"
+sheetname <- "ECU_data_stack"
 blm <- 0
 reducedres <- FALSE
 weight_cal <- FALSE
@@ -86,7 +86,7 @@ feat_df <- ELSA_df |>
     weight_stakeholder,
     weight_calibration,
     weight_final,
-    policy_num = primary_target_nbsap, # NBSAP policy in Peru
+    policy_num = primary_target, # NBSAP policy in Peru
     policy_short,
     policy_long,
     descriptions = layer_description,
@@ -122,10 +122,9 @@ feat_stack <-
 names(feat_stack) <- feat_df$feat_name
 PA <-
   terra::rast(here::here("data/elsa_inputs", lockin_df$file_name[1]))
-# No restoration projects in Peru so this is a dummy raster of 0s
-Rest <- terra::rast(here::here("data/elsa_inputs", lockin_df$file_name[1])) * 0 # None in Peru
-OECMS <- terra::rast(here::here("data/elsa_inputs", lockin_df$file_name[2]))
-DEGR_PA <- terra::rast(here::here("data/elsa_inputs", lockin_df$file_name[3]))
+Rest <- terra::rast(here::here("data/elsa_inputs", lockin_df$file_name[2]))
+OECMS <- terra::rast(here::here("data/elsa_inputs", lockin_df$file_name[3]))
+DEGR_PA <- terra::rast(here::here("data/elsa_inputs", lockin_df$file_name[4]))
 
 # Zones ####
 prot_zone <-
