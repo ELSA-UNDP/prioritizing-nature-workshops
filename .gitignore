@@ -8,3 +8,4 @@ tmpdir/*
 .vscode
 spat*
 *.env
+gurobi_downloads/*
