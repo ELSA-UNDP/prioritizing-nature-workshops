@@ -2,6 +2,7 @@ list.of.packages <- c(
   "shiny",
   "shinydashboard",
   "shinyIncubator",
+  "shinymanager",
   "prioritizr",
   "here",
   "readxl",
@@ -24,14 +25,16 @@ list.of.packages <- c(
   "zip",
   "DT",
   "argparser",
-  "purrr"
+  "purrr",
+  "devtools"
 )
 
 new.packages <-
   list.of.packages[!(list.of.packages %in% installed.packages()[, "Package"])]
 
-if (length(new.packages))
+if (length(new.packages)) {
   install.packages(new.packages, repos = "https://cran.rstudio.com/")
+}
 
 if (!require(leaflet)) {
   if (!require("devtools"))
