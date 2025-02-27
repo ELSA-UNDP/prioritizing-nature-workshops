@@ -86,7 +86,7 @@ feat_df <- ELSA_df |>
     weight_stakeholder,
     weight_calibration,
     weight_final,
-    policy_num = primary_target_nbsap, # NBSAP policy in Peru
+    policy_num = primary_target_nbsap, # NBSAP policy in Peru, GBF in Ecuador
     policy_short,
     policy_long,
     descriptions = layer_description,
